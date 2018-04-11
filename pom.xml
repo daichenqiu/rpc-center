@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dcq</groupId>
+    <artifactId>rpc-center</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>rpc-center-dal</module>
+        <module>rpc-center-core</module>
+        <module>rpc-center-service</module>
+        <module>rpc-center-war</module>
+        <module>rpc-center-client</module>
+    </modules>
+
+
+
+    <properties>
+        <start-class>com.dcq.starter.Application</start-class>
+        <chatting.client.version>1.0.1-SNAPSHOT</chatting.client.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <mockito-all.version>1.10.19</mockito-all.version>
+        <spring-boot.version>1.4.7.RELEASE</spring-boot.version>
+        <pandora-boot.version>2017-10-stable</pandora-boot.version>
+        <pandora-boot-maven-plugin.version>2.1.7.8</pandora-boot-maven-plugin.version>
+        <autoconfig-maven-plugin.version>1.2-fixcompress-SNAPSHOT</autoconfig-maven-plugin.version>
+        <velocity.starter.version>1.0.2</velocity.starter.version>
+        <amp.im.version>2.5.1</amp.im.version>
+        <ic.version>2.5.0.2</ic.version>
+        <xmp.version>2.4.8</xmp.version>
+        <apush.version>1.4.0</apush.version>
+        <over-slf4j.version>1.7.9</over-slf4j.version>
+        <schedulerx-client.version>2.0.8</schedulerx-client.version>
+        <xcode-client.version>1.2.9</xcode-client.version>
+    </properties>
+
+
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.taobao.pandora</groupId>
+                <artifactId>pandora-boot-starter-bom</artifactId>
+                <version>${pandora-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.6</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.48</version>
+            </dependency>
+
+            <!-- dependencies -->
+
+
+
+            <dependency>
+                <groupId>com.dcq</groupId>
+                <artifactId>rpc-center-client</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dcq</groupId>
+                <artifactId>rpc-center-dal</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dcq</groupId>
+                <artifactId>rpc-center-core</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dcq</groupId>
+                <artifactId>rpc-center-service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dcq</groupId>
+                <artifactId>rpc-center-war</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+
+
+    </dependencyManagement>
+
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
